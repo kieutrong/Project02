@@ -13,9 +13,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  def feed
+    Post.feed_by_user(id).order_by
+  end
+
+  def is_user? user
+    self == user
+  end
+
   private
 
   def downcase_email
-    self.email = email.downcase
+    self.email = email.downcase!
   end
 end

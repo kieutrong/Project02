@@ -5,3 +5,12 @@
     <%= @user.name %>
   </h1>
 </div>
+<div class=" posts-all">
+  <% if @user.posts.any? %>
+    <h1><%= t ".microposts" %>(<%= @user.posts.size %>)</h1>
+    <ol class="posts">
+      <%= render @posts %>
+    </ol>
+    <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+  <% end %>
+</div>

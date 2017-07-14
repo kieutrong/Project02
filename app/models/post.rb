@@ -1,10 +1,19 @@
 class Post < ApplicationRecord
   belongs_to :user
+
+  scope :order_by, ->{order created_at: :desc}
+  scope :feed_by_user, lambda{|id|
+    where "user_id = ?", id
+  }
+
+  mount_uploader :picture, PictureUploader
+
   has_many :post_tags, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: {maximum: Settings.post.maximum_of_title}
   validates :content, presence: true, length: {maximum: Settings.post.maximum_of_content}
+  validates :user, presence: true
   validate :picture_size
 
   private

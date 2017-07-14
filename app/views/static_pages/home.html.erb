@@ -1,26 +1,38 @@
-<div class="jumbotron">
-  <h1 class ="wellcome_to_my_app"><%= t ".wellcome_to_my_app" %></h1>
-  <p class ="this_website"><%= t ".this_website" %></p>
-  <%= link_to t(".sign_up"), new_user_registration_path,
-    class: "btn btn-lg btn-success", remote: :true,
+<% if user_signed_in? %>
+  <div class="row user-info-post">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render "shared/user_info" %>
+      </section>
+      <section class="micropost_form">
+        <%= render "shared/post_form" %>
+      </section>
+    </aside>
+    <div class="col-md-8 feed-all">
+      <h3><%= t ".micropost_feed" %></h3>
+      <%= render "shared/feed" %>
+    </div>
+  </div>
+<% else %>
+  <div class="jumbotron">
+    <h1 class ="wellcome_to_my_app"><%= t ".wellcome_to_my_app" %></h1>
+    <p class ="this_website"><%= t ".this_website" %></p>
+    <%= link_to t(".sign_up"), new_user_registration_path,
+      class: "btn btn-lg btn-success", remote: :true,
       data: {toggle: "modal", target: "#Modal"} %>
-
-  <div id="Modal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><%= t ".sign_up" %></h4>
-        </div>
-        <div class="modal-body">
-          <%= render "form_sign_up" %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <div id="Modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><%= t ".sign_up" %></h4>
+          </div>
+          <div class="modal-body">
+            <%= render "form_sign_up" %>
+          </div>
         </div>
       </div>
     </div>
+    <%= link_to t(".help"), help_path, class: "btn btn-lg btn-feature" %>
   </div>
-
-  <%= link_to t(".help"), help_path, class: "btn btn-lg btn-feature" %>
-</div>
+<% end %>

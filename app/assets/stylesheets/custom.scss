@@ -6,18 +6,19 @@ $color-2eff00: #2eff00;
 $color-bbb: #bbb;
 $color-c40f0f: #c40f0f;
 $color-ccc: #ccc;
+$color-f00: #f00;
 $color-f1f1f1: #f1f1f1;
-$color-ff00: #ff00;
-$white: #fff;
 $gray-111: #111;
 $gray-555: #555;
 $gray-999: #999;
+$white: #fff;
 
 body {
   background: url('img.jpg') center repeat;
 }
 
-//CSS FOR NAVBAR
+// Navbar
+
 .header nav {
   background: $gray-111;
   border-bottom: 1px solid $color-c40f0f;
@@ -120,7 +121,7 @@ footer .footer-1 {
   }
 }
 
-// CSS for Static Page
+// Static Page
 
 .help {
   color: $white;
@@ -154,14 +155,14 @@ footer .footer-1 {
   text-align: center;
 }
 
-// CSS FOR USER
+// User
 
 .gravatar-for-user {
   color: $white;
   margin: 100px 0;
 }
 
-// sidebar
+// Sidebar
 
 aside {
   section {
@@ -197,7 +198,7 @@ aside {
   margin: 100px 0;
 }
 
-// forms
+// Forms
 
 input,
 textarea,
@@ -219,7 +220,7 @@ select,
   }
 }
 
-// login
+// Login
 
 .login-all {
   margin: 100px 400px;
@@ -285,10 +286,12 @@ select,
 // All Show User
 
 .all-show-user {
+  background: $color-f1f1f1;
   margin: 70px 0 10px;
+  padding-left: 100px;
 
   h1 {
-    color: $white;
+    color: $color-c40f0f;
     font-weight: bold;
     padding: 10px 0;
     text-align: center;
@@ -301,7 +304,7 @@ select,
   }
 
   .user-name {
-    color: $white;
+    color: $color-c40f0f;
     font-weight: bold;
   }
 
@@ -317,11 +320,103 @@ select,
 }
 
 .error-explanation {
-  margin-left: 400px;
+  margin-left: 50px;
   width: 500px;
 
   ul li {
-    color: $color-ff00;
+    color: $color-f00;
     list-style: none;
   }
+}
+
+.posts-all {
+  background: $color-f1f1f1;
+
+  h1 {
+    color: $color-c40f0f;
+  }
+}
+
+.posts {
+  list-style: none;
+  margin: 0;
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    border-top: 1px solid $color-f1f1f1;
+    overflow: auto;
+    padding: 10px 0;
+  }
+
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+
+    a {
+      color: $color-c40f0f;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .title {
+    display: block;
+    font: italic bold 20px Georgia;
+    margin-left: 60px;
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .content {
+    display: block;
+    font-family: italy;
+    margin-left: 60px;
+    padding-left: 10px;
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  img {
+    border-radius: 5px;
+    max-width: 600px;
+  }
+
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+
+  .gravatar {
+    float: left;
+    margin: 5px 10px 0;
+  }
+}
+
+.user-info-post {
+  background: $color-f1f1f1;
+  padding-left: 50px;
+}
+
+.form-post {
+  margin: 0 0 50px;
+
+  .field
+  .text {
+    border-radius: 5px;
+  }
+}
+
+.user-info {
+  margin: 100px 0 0;
+}
+
+.feed-all {
+  margin: 50px 0;
 }

@@ -1,4 +1,6 @@
 en:
+  maximum_file_size: "Maximum file size 5M"
+
   devise:
     registrations:
       edit:
@@ -41,11 +43,32 @@ en:
       setting: "Setting"
 
   posts:
+    create:
+      micropost_created: "Micropost created !"
+
+    destroy:
+      post_deleted: "Post deleted !"
+
+    post:
+      ago: " ago"
+      delete: "delete"
+      posted: "Posted "
+      you_sure: "You sure ?"
+
     should_be_less_than_5MB: "Should be less than 5MB"
 
   shared:
     error_messages:
       error: "error"
+
+    post_form:
+      title: "Write title..."
+      content: "Write content..."
+      post: "Post"
+
+    user_info:
+      micropost: "micropost"
+      view_my_profile: "view my profile"
 
   static_pages:
     form_sign_up:
@@ -63,6 +86,7 @@ en:
       to_get_help: "To get help on this sample app, see the"
     home:
       help: "Help"
+      micropost_feed: "Micropost Feed"
       sign_up: "Sign up"
       this_website: "This website design uses Bootstrap 3 Frameword "
       wellcome_to_my_app: "Wellcome To My App"
@@ -92,9 +116,12 @@ en:
       delete: "Delete"
 
     registrations:
+      create:
+        not_create: "Sorry ! Can not create this account !"
       update:
         profile_updated: "Profile updated !"
         not_updated: "Not updated !"
 
     show:
+      microposts: "Microposts "
       not_find_user: "Couldn't find User with 'id' = "
