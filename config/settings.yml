@@ -1,14 +1,17 @@
+comment:
+  maximum_of_content: 255
+
+micropost:
+  accept_for_style_image: "image/jpeg,image/gif,image/png"
+
+post:
+  maximum_of_content: 255
+  maximum_of_size_picture: 5
+  maximum_of_title: 255
+
 user:
   maximum_of_email: 255
   maximum_of_name: 255
   maximum_of_paginate: 10
   maximum_of_phone: 20
   minimum_of_password: 6
-
-comment:
-  maximum_of_content: 255
-
-post:
-  maximum_of_content: 255
-  maximum_of_size_picture: 5
-  maximum_of_title: 255

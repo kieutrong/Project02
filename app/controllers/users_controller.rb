@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @posts = @user.posts.paginate page: params[:page],
+      per_page: Settings.user.maximum_of_paginate
   end
 
   def destroy
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
     else
       flash[:danger] = t ".you_can_not_delete"
     end
-    redirect_to users_url
+    redirect_to users_path
   end
 
   private
