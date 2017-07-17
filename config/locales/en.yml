@@ -44,6 +44,7 @@ en:
       log_out: "Log out"
       profile: "Profile"
       project: "Project II"
+      search: "Search ..."
       setting: "Setting"
 
   posts:
@@ -52,6 +53,10 @@ en:
 
     destroy:
       post_deleted: "Post deleted !"
+
+    index:
+      not_found: "Not found results for key word : "
+      search_results_for: "Search results for key word : "
 
     post:
       ago: " ago"
@@ -72,6 +77,7 @@ en:
     post_form:
       content: "Write content..."
       post: "Post"
+      tag: "Write tag..."
       title: "Write title..."
 
     stats:

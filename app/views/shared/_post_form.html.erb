@@ -6,6 +6,10 @@
       <%= f.text_area :title, placeholder: t(".title"), class: "text" %>
     </div>
     <div class="field">
+      <%= f.label :list_tags, class: "hide" %><br />
+      <%= f.text_area :list_tags, placeholder: t(".tag"), class: "text" %>
+    </div>
+    <div class="field">
       <%= f.label :content, class: "hide" %><br />
       <%= f.text_area :content, placeholder: t(".content"), class: "text" %>
     </div>
