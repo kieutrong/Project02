@@ -7,7 +7,7 @@ end
 
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "~> 3.3.6"
-gem "bootstrap-will_paginate", "1.0.0"
+gem "cancancan", "~> 1.10"
 gem "carrierwave", "1.1.0"
 gem "coffee-rails", "~> 4.2"
 gem "config", "~>1.0"
@@ -28,7 +28,6 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "autoprefixer-rails"
-  gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

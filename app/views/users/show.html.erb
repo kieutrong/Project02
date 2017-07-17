@@ -3,7 +3,11 @@
   <h1 class = "gravatar-for-user">
     <%= gravatar_for @user %>
     <%= @user.name %>
+    <%= render "follow_form" if user_signed_in? %>
   </h1>
+  <section class="stats">
+    <%= render "shared/stats" %>
+  </section>
 </div>
 <div class=" posts-all">
   <% if @user.posts.any? %>

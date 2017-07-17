@@ -1,11 +1,13 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+$blue: #00ff6a;
 $color-00ff19: #00ff19;
 $color-2eff00: #2eff00;
 $color-bbb: #bbb;
 $color-c40f0f: #c40f0f;
 $color-ccc: #ccc;
+$color-e8e8e8: #e8e8e8;
 $color-f00: #f00;
 $color-f1f1f1: #f1f1f1;
 $gray-111: #111;
@@ -194,6 +196,51 @@ aside {
   margin-right: 10px;
 }
 
+.gravatar-edit {
+  margin-top: 15px;
+}
+
+.stats {
+  a {
+    border-left: 1px solid $gray-999;
+    color: $color-c40f0f;
+    float: left;
+    font-weight: bold;
+    padding: 0 10px;
+
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+strong {
+  display: block;
+}
+
+.user-avatars {
+  margin-top: 10px;
+  overflow: auto;
+
+  .gravatar {
+    margin: 1px;
+  }
+
+  a {
+    padding: 0;
+  }
+
+  img {
+    width: 40px;
+  }
+}
+
 .content-all {
   margin: 100px 0;
 }
@@ -339,7 +386,6 @@ select,
 
 .posts {
   list-style: none;
-  margin: 0;
 
   li {
     border-bottom: 1px solid $gray-lighter;
@@ -350,7 +396,6 @@ select,
 
   .user {
     margin-top: 5em;
-    padding-top: 0;
 
     a {
       color: $color-c40f0f;
@@ -415,8 +460,104 @@ select,
 
 .user-info {
   margin: 100px 0 0;
+
+  h1 {
+    color: $white;
+    font-weight: bold;
+  }
 }
 
 .feed-all {
   margin: 50px 0;
+}
+
+.new-comment {
+  margin-bottom: -20px;
+  width: 300px;
+
+  .text-comment {
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 0;
+  }
+}
+
+.follow {
+  list-style: none;
+  margin: 100px 0;
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    overflow: auto;
+    padding: 10px 0;
+  }
+}
+
+.micropost-form {
+  .field {
+    textarea {
+      height: 40px;
+    }
+  }
+}
+
+.all-comment {
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+
+  li {
+    border-top: 1px solid $color-e8e8e8;
+    padding: 10px 0;
+  }
+
+  .user-comment {
+    .gravatar {
+      width: 60px;
+    }
+
+    .user-commented {
+      color: $color-c40f0f;
+    }
+
+    .delete-comment {
+      color: $color-f00;
+    }
+  }
+
+  .content-commented {
+    display: block;
+    margin-left: 60px;
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .time-of-comment {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+
+  .gravatar {
+    float: left;
+    margin: 5px 10px 0;
+  }
+}
+
+.follow-form {
+  input {
+    border-radius: 5px;
+    width: 150px;
+  }
+}
+
+.frm-comment {
+   input {
+      border-radius: 5px;
+      padding: 5px;
+      width: 300px;
+    }
 }

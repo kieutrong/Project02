@@ -1,0 +1,11 @@
+<%= form_for [comment.post, comment], html: {class: "update-comment"},
+  data: {id: comment.id} do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <span class="field frm-comment">
+    <%= f.text_field :content, placeholder: t(".edit_comment"),
+     id: "txt-comment-" << comment.post_id.to_s %>
+  </span>
+
+  <%= f.hidden_field :user_id %>
+  <%= f.submit t(".edit_comment"), class: "btn btn-primary update-comment hide" %>
+<% end %>

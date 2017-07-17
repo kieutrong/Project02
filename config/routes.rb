@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   get "/introduce",to: "static_pages#introduce"
 
   devise_for :users, controllers: {registrations: "users/registrations"}
-  resources :users, only: [:index, :show]
-  resources :posts, only: [:create, :destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :posts do
+    resources :comments
+  end
+  resources :relationships, only: [:create, :destroy]
 end

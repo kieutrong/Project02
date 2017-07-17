@@ -1,6 +1,10 @@
 en:
   maximum_file_size: "Maximum file size 5M"
 
+  comments:
+    edit_form:
+      edit_comment: "Edit Comment"
+
   devise:
     registrations:
       edit:
@@ -61,10 +65,18 @@ en:
     error_messages:
       error: "error"
 
+    form_comment:
+      create_comment: "Create comment"
+      write_comments : "Write comments... "
+
     post_form:
-      title: "Write title..."
       content: "Write content..."
       post: "Post"
+      title: "Write title..."
+
+    stats:
+      followers: "followers"
+      following: "following"
 
     user_info:
       micropost: "micropost"
@@ -78,12 +90,14 @@ en:
       your_email: "Your email"
       your_name: "Your name"
       your_password: "Your password"
+
     help:
       get_help_on_the: "Get help on the Ruby on Rails Tutorial at the"
       help: "Help"
       rails_tutorial: "Rails Tutorial help section"
       ruby_on_rails: "Ruby on Rails Tutorial book"
       to_get_help: "To get help on this sample app, see the"
+
     home:
       help: "Help"
       micropost_feed: "Micropost Feed"
@@ -110,6 +124,12 @@ en:
       user_deleted: "User deleted !"
       you_can_not_delete: "You can not delete"
 
+    follow:
+      follow: "Follow"
+
+    unfollow:
+      unfollow: "Unfollow"
+
     index:
       all_users: "All Users"
       confirm: "You sure ?"
@@ -118,10 +138,14 @@ en:
     registrations:
       create:
         not_create: "Sorry ! Can not create this account !"
+
       update:
-        profile_updated: "Profile updated !"
         not_updated: "Not updated !"
+        profile_updated: "Profile updated !"
 
     show:
       microposts: "Microposts "
       not_find_user: "Couldn't find User with 'id' = "
+
+    user:
+      you_sure: "You sure ?"

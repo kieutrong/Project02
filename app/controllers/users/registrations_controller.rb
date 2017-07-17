@@ -14,19 +14,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def edit
-  end
-
-  def update
-    if @user.update_attributes user_params
-      flash[:success] = t ".profile_updated"
-      redirect_to @user
-    else
-      render "devise/registrations/edit"
-      flash[:danger] = t ".not_updated"
-    end
-  end
-
   def destroy
     if @user.destroy
       flash[:success] = t ".user_deleted"
