@@ -11,4 +11,9 @@
         data: {confirm: t(".you_sure")} %>
     <% end %>
   </span>
+
+  <%= render "shared/form_comment", post: post %>
+
+  <div class="all-comment"><%= render post.comments.select(:id, :content,
+    :user_id, :post_id, :created_at).order(created_at: :DESC) %></div>
 </li>

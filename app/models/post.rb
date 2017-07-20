@@ -2,8 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
 
   scope :order_by, ->{order created_at: :desc}
-  scope :feed_by_user, lambda{|id|
-    where "user_id = ?", id
+  scope :feed_by_user, lambda{|following_ids, id|
+    where "user_id IN (?) OR user_id = ?", following_ids, id
   }
 
   mount_uploader :picture, PictureUploader

@@ -1,26 +1,25 @@
 class PostsController < ApplicationController
   before_action :correct_user, only: :destroy
   before_action :user_signed_in?, only: [:create, :destroy]
+  load_and_authorize_resource
 
   def create
     @post = current_user.posts.build post_params
 
     if @post.save
-      flash[:success] = t ".micropost_created"
-      redirect_to root_url
+      render json: {status: :success, html: render_to_string(@post)}
     else
       @feed_items = []
-      render "static_pages/home"
+      render json: {status: :error, errors: @post.errors.messages}
     end
   end
 
   def destroy
     if @post.destroy
-      flash[:success] = t ".post_deleted"
+      render json: {status: :success}
     else
-      flash[:danger] = t ".error"
+      render json: {status: :error, message: t(".delete_fails")}
     end
-    redirect_to request.referrer || root_url
   end
 
   private
