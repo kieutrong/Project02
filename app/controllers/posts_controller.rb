@@ -3,9 +3,13 @@ class PostsController < ApplicationController
   before_action :user_signed_in?, only: [:create, :destroy]
   load_and_authorize_resource
 
+  def index
+    @posts = Post.search_post(params[:search]).order_by.
+      page(params[:page]).per Settings.user.maximum_of_paginate
+  end
+
   def create
     @post = current_user.posts.build post_params
-
     if @post.save
       render json: {status: :success, html: render_to_string(@post)}
     else
@@ -25,7 +29,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit :content, :picture, :title
+    params.require(:post).permit :content, :picture, :title, :list_tags
   end
 
   def correct_user

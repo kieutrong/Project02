@@ -13,6 +13,7 @@ $(document).ready(function() {
           $(".posts").prepend(response.html);
           $('#post_title').val('');
           $('#post_content').val('');
+          $('#post_list_tags').val('');
         }
       },
       error: function (){

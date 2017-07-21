@@ -1,0 +1,9 @@
+<div class="search-all">
+  <% if @posts.present? %>
+    <h1><%= t ".search_results_for" %>"<%= params[:search] %>"</h1>
+    <%= render @posts %>
+  <% else %>
+    <h1><%= t ".not_found" %><%= params[:search] %>.</h1>
+  <% end %>
+  <%= paginate @posts, theme: "twitter-bootstrap-3"%>
+</div>

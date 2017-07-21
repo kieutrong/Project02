@@ -6,6 +6,12 @@
       </div>
       <div class="collapse navbar-collapse" id="menu">
         <ul class="nav navbar-nav navbar-right" >
+          <li>
+            <%= form_tag posts_path, method: :get, class: "navbar-form navbar-right" do %>
+              <%= text_field_tag :search, params[:search],
+                placeholder: t(".search"), class: "form-control" %>
+            <% end %>
+          </li>
           <li><%= link_to t(".introduce"), introduce_path, class: "introduce" %></li>
           <% if user_signed_in? %>
             <li><%= link_to t(".all_users"), users_path %></li>

@@ -1,0 +1,14 @@
+<div class="row user-info-post tags-all">
+  <aside class="col-md-4">
+    <section class="user-info">
+      <%= render "shared/user_info" %>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
+  </aside>
+  <div class="col-md-8 feed-all">
+    <h3><%= t ".all_tag" %></h3>
+    <%= render @post %>
+  </div>
+</div>

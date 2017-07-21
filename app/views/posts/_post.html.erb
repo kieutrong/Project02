@@ -2,6 +2,13 @@
   <%= link_to gravatar_for(post.user), post.user %>
   <span class="user"><%= link_to post.user.name, post.user %></span>
   <span class="title"><%= post.title %></span>
+  <span class="tag">
+    <% if post.tags.any? %>
+      <% post.tags.each do |tag| %>
+        <%= link_to tag.name, tag %>
+      <% end %>
+    <% end %>
+  </span>
   <span class="content"><%= post.content %></span>
   <%= image_tag post.picture.url if post.picture? %>
   <span class="timestamp">
